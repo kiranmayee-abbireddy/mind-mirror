@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Transform scale for hover effects */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #4A90E2;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Textarea styles */
+textarea {
+  resize: none;
+  min-height: 300px;
+  line-height: 1.6;
+}
+
+/* Animation for pattern detection */
+@keyframes highlight-pattern {
+  0% { background-color: rgba(74, 144, 226, 0.1); }
+  50% { background-color: rgba(74, 144, 226, 0.3); }
+  100% { background-color: rgba(74, 144, 226, 0.1); }
+}
+
+.detected-pattern {
+  animation: highlight-pattern 2s ease-in-out;
+}
+
+/* Calendar day hover effect */
+.calendar-day:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
